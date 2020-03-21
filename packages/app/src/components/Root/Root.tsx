@@ -18,6 +18,8 @@ import React, { FC, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link, makeStyles, Typography } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
+import AddIcon from '@material-ui/icons/Add';
+
 import {
   Sidebar,
   SidebarPage,
@@ -77,6 +79,8 @@ const Root: FC<{}> = ({ children }) => (
       <SidebarSpacer />
       <SidebarDivider />
       <SidebarItem icon={HomeIcon} to="/" text="Home" />
+      <SidebarDivider />
+      <SidebarItem icon={AddIcon} to="/add-plugin" text="Add Plugin" />
       <SidebarDivider />
       <SidebarSpace />
     </Sidebar>
