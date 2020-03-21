@@ -15,7 +15,6 @@
  */
 
 import React, { FC } from 'react';
-import { Typography, Grid } from '@material-ui/core';
 import {
   InfoCard,
   Header,
@@ -27,6 +26,8 @@ import {
   SupportButton,
 } from '@spotify-backstage/core';
 import {
+  Typography, 
+  Grid,
   TextField,
   RadioGroup,
   FormControlLabel,
@@ -48,11 +49,15 @@ const ExampleComponent: FC<{}> = () => (
       <ContentHeader title="Plugin Library">
         <SupportButton>A description of your plugin goes here.</SupportButton>
       </ContentHeader>
-      <Grid container spacing={3} direction="column">
-        <Grid item>
-          <InfoCard title="Filter Plugins" maxWidth>
-            <FormControl>
-              <FormLabel component="legend">Quick Filter</FormLabel>
+      <Grid container spacing={3} direction="row">
+        <Grid item xs={3}>
+          <InfoCard title="Find your next Plugin" maxWidth>
+            <FormControl variant="outlined" fullWidth={true} margin="normal">
+              <InputLabel>Search</InputLabel>
+              <OutlinedInput label="search"></OutlinedInput>
+            </FormControl>
+            <FormControl fullWidth={true} margin="normal">
+              <FormLabel component="legend">Quick Filters</FormLabel>
               <RadioGroup>
                 <FormControlLabel value="popular" control={<Radio/>} label="Popular" />
                 <FormControlLabel value="new" control={<Radio/>} label="New" />
@@ -60,14 +65,9 @@ const ExampleComponent: FC<{}> = () => (
                 <FormControlLabel value="monitoring" control={<Radio/>} label="Monitoring" />
               </RadioGroup>
             </FormControl>
-            <FormControl>
-              <InputLabel>Search...</InputLabel>
-              <OutlinedInput value="Filter Plugins" onChange={} label="search"></OutlinedInput>
-            </FormControl>
-            <TextField label="Search..."></TextField>
           </InfoCard>
         </Grid>
-        <Grid item>
+        <Grid item xs={9}>
           <InfoCard title="Example User List (fetching data from randomuser.me)">
             <ExampleFetchComponent />
           </InfoCard>
