@@ -26,9 +26,7 @@ import {
   SupportButton,
 } from '@spotify-backstage/core';
 import {
-  Typography, 
   Grid,
-  TextField,
   RadioGroup,
   FormControlLabel,
   FormLabel, 
@@ -37,7 +35,7 @@ import {
   InputLabel,
   OutlinedInput
 }from '@material-ui/core'
-import ExampleFetchComponent from '../ExampleFetchComponent';
+import PluginTileComponent from '../PluginTileComponent';
 
 const ExampleComponent: FC<{}> = () => (
   <Page theme={pageTheme.tool}>
@@ -69,7 +67,7 @@ const ExampleComponent: FC<{}> = () => (
         </Grid>
         <Grid item xs={9}>
           <InfoCard title="Example User List (fetching data from randomuser.me)">
-            <ExampleFetchComponent />
+            <PluginTileComponent/>
           </InfoCard>
         </Grid>
       </Grid>
