@@ -25,8 +25,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Alert from '@material-ui/lab/Alert';
+import Typography from '@material-ui/core/Typography';
 import { useAsync } from 'react-use';
-import { Progress } from '@spotify-backstage/core';
+import { Progress, InfoCard } from '@spotify-backstage/core';
 
 const useStyles = makeStyles({
   table: {
@@ -106,13 +107,20 @@ export const DenseTable: FC<DenseTableProps> = ({ users }) => {
 };
 
 export const TileGrid: FC<TileGridProps> = ({ users }) => {
-  const classes = useStyles();
+
+  console.log(users)
 
   return (
     <Grid container spacing={2} direction="row">
+      {users.map(user => (
       <Grid item xs={3}>
-      ABC
+        <InfoCard>
+          <Typography variant="h5">
+            {user.name.first}
+          </Typography>
+        </InfoCard>
       </Grid>
+      ))}
     </Grid>
   );
 };
